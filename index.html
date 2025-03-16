@@ -36,6 +36,43 @@
 
 
     <style>
+
+
+
+/* Styles for the popup */
+.popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            position: relative;
+            width: 80%;
+            max-width: 700px;
+        }
+        .popup-content iframe {
+            width: 100%;
+            height: 400px;
+        }
+        .close-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        
         /* Floating Button Styles */
         .whatsapp-float {
             position: fixed;
@@ -874,37 +911,33 @@
                         class="review-link">Read Our Google Reviews</a>
 
                 </div>
+                <div>
+                    <!-- Image that triggers the popup -->
+    <img src="img/Card 3.png" alt="Click to watch" onclick="openPopup()" style="cursor: pointer;">
 
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="testimonial-item bg-light rounded p-5">
-                        <p class="fs-5">Haseem Foundation & Academy has been a life-changing experience for my son. The
-                            one-on-one speech therapy sessions have significantly improved his communication skills. The
-                            instructors are compassionate, knowledgeable, and truly invested in each child’s success.
-                            Highly recommended for parents seeking a nurturing and effective environment for their
-                            children</p>
-                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 90px; height: 90px;"> -->
-                            <div class="ps-3">
-                                <h3 class="mb-1">Fatima Ahmed</h3>
-                                <!-- <span>Profession</span> -->
-                            </div>
-                            <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
-                        </div>
-                    </div>
-                    <div class="testimonial-item bg-light rounded p-5">
-                        <p class="fs-5">The team at Haseem Foundation is remarkable! My daughter struggled with speech
-                            delays and social skills, but after attending their personalized sessions, we’ve seen
-                            tremendous progress. The blend of play therapy and educational techniques makes learning
-                            enjoyable for kids. May Allah reward them for their amazing work!</p>
-                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <!-- <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 90px; height: 90px;">
-                            <div class="ps-3"> -->
-                            <h3 class="mb-1">Ali Khan</h3>
-                            <!-- <span>Profession</span> -->
-                        </div>
-                        <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
-                    </div>
+    <!-- The popup -->
+    <div class="popup" id="videoPopup">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup()">X</button>
+            <iframe id="youtubeVideo" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            const videoUrl = "https://www.youtube.com/embed/hvfjsTskgHY?autoplay=1";
+            document.getElementById("youtubeVideo").src = videoUrl;
+            document.getElementById("videoPopup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("youtubeVideo").src = "";
+            document.getElementById("videoPopup").style.display = "none";
+        }
+    </script>
+                    
                 </div>
+                
 
                 <!-- Testimonial End --> </div> </div></div></body>
 
