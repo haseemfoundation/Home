@@ -36,11 +36,8 @@
 
 
     <style>
-
-
-
-/* Styles for the popup */
-.popup {
+        /* Styles for the popup */
+        .popup {
             display: none;
             position: fixed;
             top: 0;
@@ -51,15 +48,18 @@
             justify-content: center;
             align-items: center;
         }
+
         .popup-content {
             position: relative;
             width: 80%;
             max-width: 700px;
         }
+
         .popup-content iframe {
             width: 100%;
             height: 400px;
         }
+
         .close-btn {
             position: absolute;
             top: -10px;
@@ -72,7 +72,7 @@
             font-size: 18px;
         }
 
-        
+
         /* Floating Button Styles */
         .whatsapp-float {
             position: fixed;
@@ -168,7 +168,9 @@
                                 <a href="contact.html"
                                     class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn
                                     More</a>
-                                <a href="contact.html" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Contact us</a>
+                                <a href="contact.html"
+                                    class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Contact
+                                    us</a>
                             </div>
                         </div>
                     </div>
@@ -189,7 +191,9 @@
                                 <a href="contact.html"
                                     class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn
                                     More</a>
-                                <a href="about.html" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Contact Us </a>
+                                <a href="about.html"
+                                    class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Contact Us
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -901,121 +905,509 @@
                 </div>
             </div>
         </div> -->
-        <div class="container-xxl py-5">
+        <div class="container-xxl py-5 testimonial-section">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Our Clients Say!</h1>
-                    <p>Real stories, real progress. See how Haseem Foundation & Academy has made a difference in the
-                        lives of children and their families through personalized care and unwavering dedication.</p>
-                    <a href="https://maps.app.goo.gl/yyp8u2inXPN5Lm1z8" target="_blank" rel="noopener"
-                        class="review-link">Read Our Google Reviews</a>
-
+                    <h1 class="mb-3">What Our Client Says</h1>
+                    <p>Our clients speak for us: Discover their success stories</p>
                 </div>
-                <div>
-                    <!-- Image that triggers the popup -->
-    <img src="img/Card 3.png" alt="Click to watch" onclick="openPopup()" style="cursor: pointer;">
 
-    <!-- The popup -->
-    <div class="popup" id="videoPopup">
-        <div class="popup-content">
-            <button class="close-btn" onclick="closePopup()">X</button>
-            <iframe id="youtubeVideo" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
+                <div class="row g-4 justify-content-center">
 
-    <script>
-        function openPopup() {
-            const videoUrl = "https://www.youtube.com/embed/hvfjsTskgHY?autoplay=1";
-            document.getElementById("youtubeVideo").src = videoUrl;
-            document.getElementById("videoPopup").style.display = "flex";
-        }
-
-        function closePopup() {
-            document.getElementById("youtubeVideo").src = "";
-            document.getElementById("videoPopup").style.display = "none";
-        }
-    </script>
-                    
-                </div>
-                
-
-                <!-- Testimonial End --> </div> </div></div></body>
-
-
-                <!-- Footer Start -->
-                <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="container py-5" >
-                        <div class="row g-5">
-                            <div class="col-lg-3 col-md-6">
-                                <h3 class="text-white mb-4">Get In Touch</h3>
-                                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>House #63, Al-Haram city,13/G Road Chishtian, Bahawalnagar, Punjab, Pakistan
-                                </p>
-                                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0300 7540134</p>
-                                <p class="mb-2"><i class="fa fa-envelope me-3"></i>haseemfoundation@gmail.com </p>
-                                <div class="d-flex pt-2">
-                                    <a class="btn btn-outline-light btn-social" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-light btn-social" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-light btn-social" href=""><i
-                                            class="fab fa-youtube"></i></a>
-                                    <a class="btn btn-outline-light btn-social" href=""><i
-                                            class="fab fa-linkedin-in"></i></a>
+                    <!-- Testimonial Card 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card text-card wow fadeInUp" data-wow-delay="0.2s">
+                            <span class="quote-icon">❝</span>
+                            <p class="testimonial-text">I can’t express how grateful I am to Haseem Foundation &
+                                Academy. My son had difficulty speaking clearly and was very shy around people. After a
+                                few months of speech therapy here, I saw a big change — he started speaking confidently
+                                and even made new friends. The therapists are so patient and genuinely care about each
+                                child. The environment is very welcoming, and they always guide parents on how to
+                                continue the learning at home. It feels like a second home for my child.</p>
+                            <div class="client-profile">
+                                <img class="client-avatar" src="img/review 4.jpg" alt="Muhammad Yousaf">
+                                <div class="client-details">
+                                    <h6 class="client-name">Muhammad Yousaf</h6>
+                                    <small class="client-location">From Dahranwala</small>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-6">
-                                <h3 class="text-white mb-4">Quick Links</h3>
-                                <a class="btn btn-link text-white-50" href="index.html">Home</a>
-                                <a class="btn btn-link text-white-50" href="about.html">About Us</a>
-                                <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
-                                <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                                <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
-                            </div>
-                            <div class="col-lg-3 col-md-6">
-                                <h3 class="text-white mb-4">Photo Gallery</h3>
-                                <div class="row g-2 pt-2">
-                                    <div class="col-4">
-                                        <img class="img-fluid rounded bg-light p-1" src="img/classes-1.jpg" alt="">
-                                    </div>
-                                    <div class="col-4">
-                                        <img class="img-fluid rounded bg-light p-1" src="img/classes-2.jpg" alt="">
-                                    </div>
-                                    <div class="col-4">
-                                        <img class="img-fluid rounded bg-light p-1" src="img/classes-3.jpg" alt="">
-                                    </div>
-                                    <div class="col-4">
-                                        <img class="img-fluid rounded bg-light p-1" src="img/classes-4.jpg" alt="">
-                                    </div>
-                                    <div class="col-4">
-                                        <img class="img-fluid rounded bg-light p-1" src="img/classes-5.jpg" alt="">
-                                    </div>
-                                    <div class="col-4">
-                                        <img class="img-fluid rounded bg-light p-1" src="img/classes-6.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6" >
-                                <h3 class="text-white mb-4">Our Location</h3>
-                                 <iframe class="position-relative rounded w-100 h-100"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.5837879671944!2d72.86440927434478!3d29.789674330598928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393d07ba238b16b1%3A0xc9de133647a45458!2sSpeech%20Therapist%20%40Haseem%20Foundation%26%20Academy!5e0!3m2!1sen!2s!4v1733594194661!5m2!1sen!2s" width="200px" height="200px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                    frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
-                            </div>
-
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="copyright">
-                            <div class="row">
-                                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
 
-                                    &copy; <a class="border-bottom" href="https://www.facebook.com/people/Haseem-Foundation/100087008280156/">Follow Us on facebook</a>, All Right
-                                    Reserved.
-
-                                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                                    <a href="">Designed with ♥</a>
+                    <!-- Video Card 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card video-card wow fadeInUp" data-wow-delay="0.4s"
+                            onclick="openPopup('https://www.youtube.com/embed/hvfjsTskgHY?autoplay=1')">
+                            <img src="img/video 1.jpg" alt="Video Testimonial 1" class="video-thumbnail">
+                            <div class="video-overlay">
+                                <div class="play-button-wrapper">
+                                    <span class="play-button">▶</span>
                                 </div>
-                                <!-- <div class="col-md-6 text-center text-md-end">
+                                <div class="video-info">
+                                    <h6 class="video-title">Client Success Story</h6>
+                                    <small>Watch Video Review</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card text-card wow fadeInUp" data-wow-delay="0.6s">
+                            <span class="quote-icon">❝</span>
+                            <p class="testimonial-text">My son had a speech delay, and after just a few months at Haseem
+                                Foundation, we noticed a huge improvement. The therapists are very kind and patient with
+                                children. I really appreciate their personal attention to every child’s needs. Highly
+                                recommended for parents in Bahawalnagar!</p>
+                            <div class="client-profile">
+                                <img class="client-avatar" src="img/review 6.jpg" alt="Deanna Minnich">
+                                <div class="client-details">
+                                    <h6 class="client-name">Muhammad Ali</h6>
+                                    <small class="client-location">from Chishtian</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card video-card wow fadeInUp" data-wow-delay="0.8s"
+                            onclick="openPopup('https://www.youtube.com/embed/jxOnhHb3En4?si=AJYp10-w8X4Q2u1n')">
+                            <img src="img/video 2.jpg"
+                                alt="Video Testimonial 2" class="video-thumbnail">
+                            <div class="video-overlay">
+                                <div class="play-button-wrapper">
+                                    <span class="play-button">▶</span>
+                                </div>
+                                <div class="video-info">
+                                    <h6 class="video-title">Client Testimonial</h6>
+                                    <small>Watch Video Review</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-card text-card wow fadeInUp" data-wow-delay="1s">
+                            <span class="quote-icon">❝</span>
+                            <p class="testimonial-text">What sets Haseem Foundation apart is the 'shafqat' (compassion)
+                                and 'lagan' (dedication) of their entire team. They treat every child like their own
+                                family. They don't just provide therapy; they offer complete 'rehnumai' (guidance) to
+                                the parents every step of the way. This academy truly is a 'umeed ki kiran' (ray of
+                                hope) for families in Bahawalnagar and surrounding areas.</p>
+                            <div class="client-profile">
+                                <img class="client-avatar" src="img/review 5.jpg" alt="Client Name">
+                                <div class="client-details">
+                                    <h6 class="client-name">- Sajida Kausar</h6>
+                                    <small class="client-location">from Bahawalnagar</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Video Popup Modal -->
+                <div class="popup" id="videoPopup">
+                    <div class="popup-content">
+                        <button class="close-btn" onclick="closePopup()">✕</button>
+                        <iframe id="youtubeVideo" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function openPopup(videoUrl) {
+                document.getElementById("youtubeVideo").src = videoUrl;
+                document.getElementById("videoPopup").style.display = "flex";
+                document.body.style.overflow = "hidden"; // Prevent background scrolling
+            }
+
+            function closePopup() {
+                document.getElementById("youtubeVideo").src = "";
+                document.getElementById("videoPopup").style.display = "none";
+                document.body.style.overflow = "auto"; // Re-enable scrolling
+            }
+
+            // Close popup when clicking outside the video
+            document.addEventListener('click', function (event) {
+                const popup = document.getElementById('videoPopup');
+                if (event.target === popup) {
+                    closePopup();
+                }
+            });
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    closePopup();
+                }
+            });
+        </script>
+
+        <style>
+            .testimonial-section {
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                min-height: 100vh;
+            }
+
+            .testimonial-card {
+                background: #ffffff;
+                border-radius: 15px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+                height: 100%;
+                min-height: 420px;
+                transition: all 0.3s ease;
+                overflow: hidden;
+            }
+
+            .testimonial-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Text Card Styling */
+            .text-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 30px;
+                position: relative;
+            }
+
+            .quote-icon {
+                font-size: 5rem;
+                color: #e8f0fe;
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                z-index: 0;
+                line-height: 1;
+                font-weight: 900;
+                opacity: 0.5;
+            }
+
+            .testimonial-text {
+                position: relative;
+                z-index: 1;
+                font-size: 15px;
+                line-height: 1.8;
+                color: #555;
+                margin-bottom: 25px;
+                flex-grow: 1;
+            }
+
+            .client-profile {
+                display: flex;
+                align-items: center;
+                padding-top: 20px;
+                border-top: 2px solid #f0f0f0;
+            }
+
+            .client-avatar {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid #f0f0f0;
+                flex-shrink: 0;
+            }
+
+            .client-details {
+                margin-left: 15px;
+            }
+
+            .client-name {
+                margin: 0;
+                font-size: 16px;
+                font-weight: 600;
+                color: #333;
+            }
+
+            .client-location {
+                color: #888;
+                font-size: 13px;
+            }
+
+            /* Video Card Styling */
+            .video-card {
+                cursor: pointer;
+                position: relative;
+                padding: 0;
+                background: #000;
+            }
+
+            .video-thumbnail {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .video-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                transition: all 0.3s ease;
+            }
+
+            .video-card:hover .video-overlay {
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
+            }
+
+            .play-button-wrapper {
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+                border: 3px solid rgba(255, 255, 255, 0.8);
+                margin-bottom: 20px;
+            }
+
+            .video-card:hover .play-button-wrapper {
+                transform: scale(1.1);
+                background: rgba(255, 255, 255, 0.3);
+                border-color: #fff;
+            }
+
+            .play-button {
+                font-size: 2.5rem;
+                line-height: 1;
+                margin-left: 5px;
+            }
+
+            .video-info {
+                text-align: center;
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 90%;
+            }
+
+            .video-title {
+                margin: 0 0 5px 0;
+                font-size: 18px;
+                font-weight: 600;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .video-info small {
+                font-size: 13px;
+                opacity: 0.9;
+            }
+
+            /* Video Popup Modal */
+            .popup {
+                display: none;
+                position: fixed;
+                z-index: 9999;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.9);
+                align-items: center;
+                justify-content: center;
+                animation: fadeIn 0.3s ease;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .popup-content {
+                position: relative;
+                background-color: #000;
+                margin: auto;
+                padding: 0;
+                width: 90%;
+                max-width: 1000px;
+                border-radius: 10px;
+                overflow: hidden;
+                animation: slideIn 0.3s ease;
+            }
+
+            @keyframes slideIn {
+                from {
+                    transform: translateY(-50px);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .close-btn {
+                position: absolute;
+                top: -50px;
+                right: 0;
+                color: white;
+                font-size: 32px;
+                font-weight: normal;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border: none;
+                cursor: pointer;
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+
+            .close-btn:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: rotate(90deg);
+            }
+
+            #youtubeVideo {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                display: block;
+                border: none;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 991px) {
+                .testimonial-card {
+                    min-height: 380px;
+                }
+
+                .quote-icon {
+                    font-size: 4rem;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .testimonial-section {
+                    padding: 30px 0 !important;
+                }
+
+                .testimonial-card {
+                    min-height: 350px;
+                    margin-bottom: 20px;
+                }
+
+                .popup-content {
+                    width: 95%;
+                }
+
+                .close-btn {
+                    top: -45px;
+                    right: -5px;
+                }
+            }
+        </style>
+    </div>
+
+
+    <!-- Testimonial End --> </div>
+    </div>
+    </div>
+</body>
+
+
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-white mb-4">Get In Touch</h3>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>House #63, Al-Haram city,13/G Road Chishtian,
+                    Bahawalnagar, Punjab, Pakistan
+                </p>
+                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0300 7540134</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>haseemfoundation@gmail.com </p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-white mb-4">Quick Links</h3>
+                <a class="btn btn-link text-white-50" href="index.html">Home</a>
+                <a class="btn btn-link text-white-50" href="about.html">About Us</a>
+                <a class="btn btn-link text-white-50" href="contact.html">Contact Us</a>
+                <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-white mb-4">Photo Gallery</h3>
+                <div class="row g-2 pt-2">
+                    <div class="col-4">
+                        <img class="img-fluid rounded bg-light p-1" src="img/classes-1.jpg" alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid rounded bg-light p-1" src="img/classes-2.jpg" alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid rounded bg-light p-1" src="img/classes-3.jpg" alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid rounded bg-light p-1" src="img/classes-4.jpg" alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid rounded bg-light p-1" src="img/classes-5.jpg" alt="">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid rounded bg-light p-1" src="img/classes-6.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h3 class="text-white mb-4">Our Location</h3>
+                <iframe class="position-relative rounded w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.5837879671944!2d72.86440927434478!3d29.789674330598928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393d07ba238b16b1%3A0xc9de133647a45458!2sSpeech%20Therapist%20%40Haseem%20Foundation%26%20Academy!5e0!3m2!1sen!2s!4v1733594194661!5m2!1sen!2s"
+                    width="200px" height="200px" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" frameborder="0" style="min-height: 400px; border:0;"
+                    allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+
+                    &copy; <a class="border-bottom"
+                        href="https://www.facebook.com/people/Haseem-Foundation/100087008280156/">Follow Us on
+                        facebook</a>, All Right
+                    Reserved.
+
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    <a href="">Designed with ♥</a>
+                </div>
+                <!-- <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
                         <a href="">Home</a>
                         <a href="">Cookies</a>
@@ -1023,29 +1415,28 @@
                         <a href="">FQAs</a>
                     </div>
                 </div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Footer End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
 
 
 
-                <!-- Back to Top -->
-                <!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+<!-- Back to Top -->
+<!-- <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div> -->
 
-                <!-- JavaScript Libraries -->
-                <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-                <script src="lib/wow/wow.min.js"></script>
-                <script src="lib/easing/easing.min.js"></script>
-                <script src="lib/waypoints/waypoints.min.js"></script>
-                <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-                <!-- Template Javascript -->
-                <script src="js/main.js"></script>
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
 </body>
 
 </html>
-
