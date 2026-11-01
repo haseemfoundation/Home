@@ -907,189 +907,190 @@
         </div> -->
         <!-- Success Stats Start -->
 <!-- Success Graph Start -->
-<div class="container-xxl py-5">
+<!-- Success Timeline Start -->
+<div class="container-xxl py-5 hx-section">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <h1 class="mb-3">Our Success Rate</h1>
-            <p>Year after year, more children reach their therapy goals with us.</p>
+            <span class="hx-eyebrow">Our Impact</span>
+            <h1 class="mb-3">Our Success Rate, Year by Year</h1>
+            <p>More children reach their therapy goals with us every year.</p>
         </div>
 
-        <div class="hg-card wow fadeInUp" data-wow-delay="0.3s" id="hgCard">
-            <div class="hg-plot">
-                <div class="hg-line" style="bottom: 100%;"><span>100%</span></div>
-                <div class="hg-line" style="bottom: 75%;"><span>75%</span></div>
-                <div class="hg-line" style="bottom: 50%;"><span>50%</span></div>
-                <div class="hg-line" style="bottom: 25%;"><span>25%</span></div>
-                <div class="hg-line" style="bottom: 0%;"><span>0%</span></div>
-                <div class="hg-bars" id="hgBars"></div>
+        <div class="hx-card wow fadeInUp" data-wow-delay="0.3s" id="hxCard">
+            <div class="hx-timeline">
+                <div class="hx-track" id="hxTrack"><div class="hx-track-fill" id="hxFill"></div></div>
+                <div class="hx-row" id="hxRow"></div>
             </div>
-            <div class="hg-years" id="hgYears"></div>
+
+            <div class="row g-3 mt-4">
+                <div class="col-md-4">
+                    <div class="hx-tile">
+                        <div class="hx-tile-label">Latest Success Rate</div>
+                        <div class="hx-tile-value"><span id="hxT1">0</span>%</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hx-tile">
+                        <div class="hx-tile-label" id="hxT2L">Growth</div>
+                        <div class="hx-tile-value">+<span id="hxT2">0</span> pts</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hx-tile">
+                        <div class="hx-tile-label">Years Tracked</div>
+                        <div class="hx-tile-value"><span id="hxT3">0</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <style>
-    .hg-card {
+    /* Change these two colors to match your brand */
+    .hx-section { --hx-brand: #FE5D37; --hx-soft: #FFF0EB; }
+
+    .hx-eyebrow {
+        display: inline-block;
+        background: var(--hx-soft);
+        color: var(--hx-brand);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 5px 16px;
+        border-radius: 30px;
+        margin-bottom: 14px;
+        letter-spacing: 0.5px;
+    }
+    .hx-card {
         background: #ffffff;
-        border-radius: 15px;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        padding: 50px 30px 30px 30px;
-        max-width: 900px;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        padding: 45px 30px 35px 30px;
+        max-width: 1000px;
         margin: 0 auto;
     }
-    .hg-plot {
-        position: relative;
-        height: 300px;
-        margin-left: 45px;
-    }
-    .hg-line {
+    .hx-timeline { position: relative; }
+    .hx-row { display: flex; position: relative; }
+    .hx-track {
         position: absolute;
-        left: 0;
-        right: 0;
-        border-top: 1px dashed #e5e5e5;
+        top: 185px;
+        height: 3px;
+        background: #eeeeee;
+        border-radius: 3px;
     }
-    .hg-line span {
-        position: absolute;
-        left: -45px;
-        top: -9px;
-        width: 38px;
-        text-align: right;
-        font-size: 12px;
-        color: #aaa;
-    }
-    .hg-bars {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-    }
-    .hg-col {
+    .hx-track-fill {
         height: 100%;
-        width: 14%;
-        max-width: 70px;
+        width: 0;
+        background: var(--hx-brand);
+        border-radius: 3px;
+    }
+    .hx-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 0;
+    }
+    .hx-ringbox {
+        height: 170px;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
+        margin-bottom: 16px;
     }
-    .hg-val {
-        font-weight: 700;
-        font-size: 18px;
-        color: #333;
+    .hx-badge {
+        background: var(--hx-brand);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 3px 12px;
+        border-radius: 20px;
         margin-bottom: 8px;
     }
-    .hg-fill {
-        width: 100%;
-        height: 0;
-        border-radius: 10px 10px 0 0;
-        opacity: 0.55;
-        transition: height 1.4s ease;
+    .hx-ring {
+        position: relative;
+        opacity: 0;
+        transform: translateY(16px) scale(0.9);
+        transition: opacity 0.8s cubic-bezier(.22,1,.36,1), transform 0.8s cubic-bezier(.22,1,.36,1);
     }
-    .hg-latest .hg-fill {
-        opacity: 1;
-    }
-    .hg-latest .hg-val {
-        font-size: 22px;
-    }
-    .hg-years {
+    .hx-ring.on { opacity: 1; transform: none; }
+    .hx-ring:hover { transform: scale(1.06); }
+    .hx-ring svg { display: block; width: 100%; height: 100%; }
+    .hx-num {
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
         display: flex;
-        justify-content: space-around;
-        margin-left: 45px;
-        border-top: 2px solid #333;
-        padding-top: 12px;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #333;
     }
-    .hg-years div {
-        width: 14%;
-        max-width: 70px;
+    .hx-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 3px solid var(--hx-brand);
+        background: #fff;
+        position: relative;
+        z-index: 1;
+        transform: scale(0);
+        transition: transform 0.5s cubic-bezier(.34,1.56,.64,1);
+    }
+    .hx-dot.on { transform: scale(1); }
+    .hx-dot.hx-dashed { border-style: dashed; border-color: #ccc; }
+    .hx-year { font-size: 17px; font-weight: 600; margin-top: 10px; color: #333; }
+    .hx-sub { font-size: 13px; color: #999; margin-top: 2px; }
+    .hx-tile {
+        background: #fafafa;
+        border-radius: 14px;
+        padding: 20px;
         text-align: center;
-        font-weight: 600;
-        color: #555;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    @media (max-width: 576px) {
-        .hg-card { padding: 40px 15px 20px 15px; }
-        .hg-plot { height: 240px; }
-        .hg-val { font-size: 14px; }
-        .hg-latest .hg-val { font-size: 16px; }
-        .hg-years div { font-size: 13px; }
+    .hx-tile:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); }
+    .hx-tile-label { font-size: 14px; color: #888; }
+    .hx-tile-value { font-size: 30px; font-weight: 700; color: #333; margin-top: 4px; }
+
+    @media (max-width: 767px) {
+        .hx-card { padding: 30px 10px 25px 10px; }
+        .hx-ringbox { height: 120px; }
+        .hx-track { top: 135px; }
+        .hx-year { font-size: 14px; }
+        .hx-sub { font-size: 11px; }
     }
 </style>
 
 <script>
     (function () {
         /* EDIT YOUR NUMBERS HERE.
-           Replace null with the real success rate when you have it.
-           Years set to null are hidden on the page. */
-        var hgData = [
+           value: the real success rate, or null if you don't have it.
+           Years with null are hidden, unless inProgress is true.
+           When 2026 is finished, put its number in and delete inProgress. */
+        var hxData = [
             { year: 2021, value: null },
             { year: 2022, value: null },
             { year: 2023, value: 90 },
             { year: 2024, value: 95 },
             { year: 2025, value: 96 },
-            { year: 2026, value: null }
+            { year: 2026, value: null, inProgress: true }
         ];
 
-        var bars = document.getElementById('hgBars');
-        var years = document.getElementById('hgYears');
-        var card = document.getElementById('hgCard');
-        if (!bars || !years || !card) return;
+        var card = document.getElementById('hxCard');
+        var row = document.getElementById('hxRow');
+        if (!card || !row) return;
 
-        var shown = hgData.filter(function (d) { return d.value !== null; });
+        var C = 2 * Math.PI * 52;
+        var brand = getComputedStyle(card).getPropertyValue('--hx-brand').trim() || '#FE5D37';
+        var items = hxData.filter(function (d) { return d.value !== null || d.inProgress; });
+        var nums = items.filter(function (d) { return d.value !== null; });
+        if (!nums.length) return;
+        var latest = nums[nums.length - 1];
+        var mobile = window.innerWidth < 768;
 
-        shown.forEach(function (d, i) {
-            var col = document.createElement('div');
-            col.className = 'hg-col' + (i === shown.length - 1 ? ' hg-latest' : '');
-            col.innerHTML =
-                '<div class="hg-val"><span class="hg-count" data-target="' + d.value + '">0</span>%</div>' +
-                '<div class="hg-fill bg-primary" data-h="' + d.value + '"></div>';
-            bars.appendChild(col);
-
-            var label = document.createElement('div');
-            label.textContent = d.year;
-            years.appendChild(label);
-        });
-
-        function animate() {
-            var fills = card.querySelectorAll('.hg-fill');
-            var counts = card.querySelectorAll('.hg-count');
-
-            fills.forEach(function (fill, i) {
-                fill.style.transitionDelay = (i * 0.15) + 's';
-                fill.style.height = fill.getAttribute('data-h') + '%';
-            });
-
-            counts.forEach(function (counter, i) {
-                var target = parseInt(counter.getAttribute('data-target'), 10);
-                var duration = 1400;
-                var delay = i * 150;
-                var start = null;
-
-                function step(time) {
-                    if (!start) start = time;
-                    var progress = Math.min((time - start) / duration, 1);
-                    counter.textContent = Math.round(progress * target);
-                    if (progress < 1) requestAnimationFrame(step);
-                }
-                setTimeout(function () { requestAnimationFrame(step); }, delay);
-            });
-        }
-
-        if ('IntersectionObserver' in window) {
-            var observer = new IntersectionObserver(function (entries) {
-                if (entries[0].isIntersecting) {
-                    animate();
-                    observer.disconnect();
-                }
-            }, { threshold: 0.3 });
-            observer.observe(card);
-        } else {
-            animate();
-        }
-    })();
-</script>
+        items.forEach(function (d) {
+            var feat = d === latest;
+            var prog = d.value === null;
 <!-- Success Graph End -->
         <div class="container-xxl py-5 testimonial-section">
             <div class="container">
