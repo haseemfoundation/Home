@@ -907,168 +907,190 @@
         </div> -->
         <!-- Success Stats Start -->
 <!-- Success Graph Start -->
-<!-- Success Timeline Start -->
-<!-- Success Graph Start -->
-<div class="container-xxl py-5 hc-section">
+<div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-            <span class="hc-eyebrow">Our Impact</span>
-            <h1 class="mb-3">Our Success Rate, Year by Year</h1>
-            <p>How many children reached their therapy goals each year.</p>
+            <h1 class="mb-3">Our Success Rate</h1>
+            <p>Year after year, more children reach their therapy goals with us.</p>
         </div>
 
-        <div class="hc-card wow fadeInUp" data-wow-delay="0.3s" id="hcCard">
-            <div class="row g-3 mb-3">
-                <div class="col-md-4"><div class="hc-kpi"><div class="hc-kpi-label" id="hcK1L">Latest</div><div class="hc-kpi-value"><span id="hcK1">0</span>%</div></div></div>
-                <div class="col-md-4"><div class="hc-kpi"><div class="hc-kpi-label" id="hcK2L">Total Change</div><div class="hc-kpi-value" id="hcK2">0</div></div></div>
-                <div class="col-md-4"><div class="hc-kpi"><div class="hc-kpi-label" id="hcK3L">Biggest Jump</div><div class="hc-kpi-value" id="hcK3">0</div></div></div>
+        <div class="hg-card wow fadeInUp" data-wow-delay="0.3s" id="hgCard">
+            <div class="hg-plot">
+                <div class="hg-line" style="bottom: 100%;"><span>100%</span></div>
+                <div class="hg-line" style="bottom: 75%;"><span>75%</span></div>
+                <div class="hg-line" style="bottom: 50%;"><span>50%</span></div>
+                <div class="hg-line" style="bottom: 25%;"><span>25%</span></div>
+                <div class="hg-line" style="bottom: 0%;"><span>0%</span></div>
+                <div class="hg-bars" id="hgBars"></div>
             </div>
-
-            <div class="hc-wrap" id="hcWrap">
-                <svg id="hcSvg" width="100%" role="img" aria-label="Success rate line chart"></svg>
-                <div class="hc-tip" id="hcTip"></div>
-            </div>
-            <p class="hc-cap" id="hcCap"></p>
-            <p class="hc-sum hc-fade" id="hcSum"></p>
+            <div class="hg-years" id="hgYears"></div>
         </div>
     </div>
 </div>
 
 <style>
-    /* Change these colors to match your brand */
-    .hc-section { --hc-brand: #FE5D37; --hc-soft: #FFF0EB; --hc-dark: #993C1D; }
-
-    .hc-eyebrow {
-        display: inline-block;
-        background: var(--hc-soft);
-        color: var(--hc-brand);
-        font-size: 13px;
-        font-weight: 600;
-        padding: 5px 16px;
-        border-radius: 30px;
-        margin-bottom: 14px;
-        letter-spacing: 0.5px;
-    }
-    .hc-card {
+    .hg-card {
         background: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        padding: 30px;
-        max-width: 1000px;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        padding: 50px 30px 30px 30px;
+        max-width: 900px;
         margin: 0 auto;
     }
-    .hc-kpi {
-        background: #fafafa;
-        border-radius: 14px;
-        padding: 16px 20px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .hg-plot {
+        position: relative;
+        height: 300px;
+        margin-left: 45px;
     }
-    .hc-kpi:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06); }
-    .hc-kpi-label { font-size: 14px; color: #888; }
-    .hc-kpi-value { font-size: 28px; font-weight: 700; color: #333; }
-    .hc-wrap { position: relative; }
-    .hc-wrap svg { display: block; overflow: visible; }
-    .hc-pt {
-        transform-box: fill-box;
-        transform-origin: center;
-        transform: scale(0);
-        transition: transform 0.5s cubic-bezier(.34,1.56,.64,1);
-    }
-    .hc-pt.on { transform: scale(1); }
-    .hc-fade { opacity: 0; transition: opacity 0.6s ease; }
-    .hc-fade.on { opacity: 1; }
-    .hc-tip {
+    .hg-line {
         position: absolute;
-        pointer-events: none;
-        background: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        padding: 8px 14px;
-        font-size: 13px;
+        left: 0;
+        right: 0;
+        border-top: 1px dashed #e5e5e5;
+    }
+    .hg-line span {
+        position: absolute;
+        left: -45px;
+        top: -9px;
+        width: 38px;
+        text-align: right;
+        font-size: 12px;
+        color: #aaa;
+    }
+    .hg-bars {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+    }
+    .hg-col {
+        height: 100%;
+        width: 14%;
+        max-width: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .hg-val {
+        font-weight: 700;
+        font-size: 18px;
         color: #333;
-        transform: translate(-50%, -120%);
-        opacity: 0;
-        transition: opacity 0.2s;
-        white-space: nowrap;
-        z-index: 5;
+        margin-bottom: 8px;
     }
-    .hc-cap { font-size: 12px; color: #aaa; text-align: right; margin: 4px 0 0 0; }
-    .hc-sum {
-        font-size: 16px;
-        line-height: 1.7;
+    .hg-fill {
+        width: 100%;
+        height: 0;
+        border-radius: 10px 10px 0 0;
+        opacity: 0.55;
+        transition: height 1.4s ease;
+    }
+    .hg-latest .hg-fill {
+        opacity: 1;
+    }
+    .hg-latest .hg-val {
+        font-size: 22px;
+    }
+    .hg-years {
+        display: flex;
+        justify-content: space-around;
+        margin-left: 45px;
+        border-top: 2px solid #333;
+        padding-top: 12px;
+    }
+    .hg-years div {
+        width: 14%;
+        max-width: 70px;
+        text-align: center;
+        font-weight: 600;
         color: #555;
-        margin: 16px 0 0 0;
-        padding-top: 16px;
-        border-top: 1px solid #f0f0f0;
     }
-    @media (max-width: 767px) {
-        .hc-card { padding: 20px 15px; }
-        .hc-kpi-value { font-size: 24px; }
+    @media (max-width: 576px) {
+        .hg-card { padding: 40px 15px 20px 15px; }
+        .hg-plot { height: 240px; }
+        .hg-val { font-size: 14px; }
+        .hg-latest .hg-val { font-size: 16px; }
+        .hg-years div { font-size: 13px; }
     }
 </style>
 
 <script>
     (function () {
         /* EDIT YOUR NUMBERS HERE.
-           value: the real success rate, or null if you don't have it.
-           Years with null are hidden, unless inProgress is true.
-           When 2026 is finished, put its number in and delete inProgress. */
-        var hcData = [
+           Replace null with the real success rate when you have it.
+           Years set to null are hidden on the page. */
+        var hgData = [
             { year: 2021, value: null },
             { year: 2022, value: null },
             { year: 2023, value: 90 },
             { year: 2024, value: 95 },
             { year: 2025, value: 96 },
-            { year: 2026, value: null, inProgress: true }
+            { year: 2026, value: null }
         ];
 
-        var card = document.getElementById('hcCard');
-        var svg = document.getElementById('hcSvg');
-        if (!card || !svg) return;
+        var bars = document.getElementById('hgBars');
+        var years = document.getElementById('hgYears');
+        var card = document.getElementById('hgCard');
+        if (!bars || !years || !card) return;
 
-        var css = getComputedStyle(card);
-        var BR = css.getPropertyValue('--hc-brand').trim() || '#FE5D37';
-        var SOFT = css.getPropertyValue('--hc-soft').trim() || '#FFF0EB';
-        var DARK = css.getPropertyValue('--hc-dark').trim() || '#993C1D';
+        var shown = hgData.filter(function (d) { return d.value !== null; });
 
-        var items = hcData.filter(function (d) { return d.value !== null || d.inProgress; });
-        var nums = items.filter(function (d) { return d.value !== null; });
-        if (!nums.length) return;
+        shown.forEach(function (d, i) {
+            var col = document.createElement('div');
+            col.className = 'hg-col' + (i === shown.length - 1 ? ' hg-latest' : '');
+            col.innerHTML =
+                '<div class="hg-val"><span class="hg-count" data-target="' + d.value + '">0</span>%</div>' +
+                '<div class="hg-fill bg-primary" data-h="' + d.value + '"></div>';
+            bars.appendChild(col);
 
-        var mobile = document.getElementById('hcWrap').offsetWidth < 576;
-        var W = mobile ? 480 : 800, H = mobile ? 340 : 360;
-        var L = 50, R = 20, T = 40, B = 55, pw = W - L - R, ph = H - T - B;
-        svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
-
-        var minV = Math.min.apply(null, nums.map(function (d) { return d.value; }));
-        var lo = Math.max(0, Math.floor((minV - 5) / 5) * 5), hi = 100;
-        function X(i) { return L + pw * (i + 0.5) / items.length; }
-        function Y(v) { return T + ph * (1 - (v - lo) / (hi - lo)); }
-        function pts(n) { return (n > 0 ? '+' : n < 0 ? '-' : '') + Math.abs(n) + (Math.abs(n) === 1 ? ' pt' : ' pts'); }
-
-        var s = '';
-        for (var v = lo; v <= hi; v += 5) {
-            s += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(v) + '" y2="' + Y(v) + '" stroke="#eeeeee" stroke-width="1"/>' +
-                 '<text x="' + (L - 10) + '" y="' + (Y(v) + 4) + '" text-anchor="end" font-size="12" fill="#aaa">' + v + '%</text>';
-        }
-        if (lo > 0) {
-            var by = T + ph - 14;
-            s += '<path d="M' + (L - 7) + ' ' + (by + 4) + ' L' + (L + 7) + ' ' + (by - 2) + ' M' + (L - 7) + ' ' + (by + 10) + ' L' + (L + 7) + ' ' + (by + 4) + '" stroke="#aaa" stroke-width="1.5"/>';
-        }
-        items.forEach(function (d, i) {
-            if (d.inProgress) {
-                var bw = pw / items.length;
-                s += '<rect x="' + (X(i) - bw / 2 + 6) + '" y="' + T + '" width="' + (bw - 12) + '" height="' + ph + '" rx="8" fill="' + BR + '" fill-opacity="0.05"/>' +
-                     '<line x1="' + X(i) + '" x2="' + X(i) + '" y1="' + (T + 10) + '" y2="' + (T + ph) + '" stroke="' + BR + '" stroke-opacity="0.4" stroke-dasharray="4 5"/>' +
-                     '<text x="' + X(i) + '" y="' + (T + ph / 2) + '" text-anchor="middle" font-size="12" fill="#aaa">Data coming</text>';
-            }
-            s += '<text x="' + X(i) + '" y="' + (H - B + 26) + '" text-anchor="middle" font-size="14" font-weight="600" fill="#333">' + d.year + '</text>';
-            if (d.inProgress) {
-                s += '<text x="' + X(i) + '" y="' + (H - B + 43) + '" text-anchor="middle" font-size="11" fill="#aaa">In Progress</text>';
-            }
+            var label = document.createElement('div');
+            label.textContent = d.year;
+            years.appendChild(label);
         });
 
-        var P = nums.map(function (d) { return [X(items.indexOf(d)), Y(d.value)]; });
+        function animate() {
+            var fills = card.querySelectorAll('.hg-fill');
+            var counts = card.querySelectorAll('.hg-count');
+
+            fills.forEach(function (fill, i) {
+                fill.style.transitionDelay = (i * 0.15) + 's';
+                fill.style.height = fill.getAttribute('data-h') + '%';
+            });
+
+            counts.forEach(function (counter, i) {
+                var target = parseInt(counter.getAttribute('data-target'), 10);
+                var duration = 1400;
+                var delay = i * 150;
+                var start = null;
+
+                function step(time) {
+                    if (!start) start = time;
+                    var progress = Math.min((time - start) / duration, 1);
+                    counter.textContent = Math.round(progress * target);
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                setTimeout(function () { requestAnimationFrame(step); }, delay);
+            });
+        }
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) {
+                    animate();
+                    observer.disconnect();
+                }
+            }, { threshold: 0.3 });
+            observer.observe(card);
+        } else {
+            animate();
+        }
+    })();
+</script>
+<!-- Success Graph End -->
         <div class="container-xxl py-5 testimonial-section">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
