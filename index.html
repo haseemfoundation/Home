@@ -905,6 +905,142 @@
                 </div>
             </div>
         </div> -->
+        <!-- Success Stats Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Our Success Rate</h1>
+            <p>Year after year, more children reach their therapy goals with us.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="hs-card">
+                    <span class="hs-year">2023</span>
+                    <div class="hs-percent text-primary"><span class="hs-count" data-target="90">0</span>%</div>
+                    <div class="hs-bar"><div class="hs-fill bg-primary" data-width="90"></div></div>
+                    <p class="hs-label">Success Rate</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="hs-card">
+                    <span class="hs-year">2024</span>
+                    <div class="hs-percent text-primary"><span class="hs-count" data-target="95">0</span>%</div>
+                    <div class="hs-bar"><div class="hs-fill bg-primary" data-width="95"></div></div>
+                    <p class="hs-label">Success Rate</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="hs-card hs-card-latest">
+                    <span class="hs-year bg-primary text-white">2025</span>
+                    <div class="hs-percent text-primary"><span class="hs-count" data-target="96">0</span>%</div>
+                    <div class="hs-bar"><div class="hs-fill bg-primary" data-width="96"></div></div>
+                    <p class="hs-label">Success Rate</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .hs-card {
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        padding: 40px 30px;
+        text-align: center;
+        height: 100%;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    .hs-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    .hs-card-latest {
+        border-color: rgba(0, 0, 0, 0.06);
+    }
+    .hs-year {
+        display: inline-block;
+        background: #f0f0f0;
+        color: #555;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 6px 20px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+    }
+    .hs-percent {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 25px;
+    }
+    .hs-bar {
+        height: 10px;
+        background: #eeeeee;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 15px;
+    }
+    .hs-fill {
+        height: 100%;
+        width: 0;
+        border-radius: 10px;
+        transition: width 1.6s ease;
+    }
+    .hs-label {
+        margin: 0;
+        color: #888;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+</style>
+
+<script>
+    (function () {
+        var cards = document.querySelectorAll('.hs-card');
+        if (!cards.length) return;
+
+        function animate(card) {
+            var counter = card.querySelector('.hs-count');
+            var fill = card.querySelector('.hs-fill');
+            var target = parseInt(counter.getAttribute('data-target'), 10);
+            var start = null;
+            var duration = 1600;
+
+            fill.style.width = fill.getAttribute('data-width') + '%';
+
+            function step(time) {
+                if (!start) start = time;
+                var progress = Math.min((time - start) / duration, 1);
+                counter.textContent = Math.round(progress * target);
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animate(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+            cards.forEach(function (card) { observer.observe(card); });
+        } else {
+            cards.forEach(animate);
+        }
+    })();
+</script>
+<!-- Success Stats End -->
         <div class="container-xxl py-5 testimonial-section">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
