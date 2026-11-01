@@ -906,6 +906,7 @@
             </div>
         </div> -->
         <!-- Success Stats Start -->
+<!-- Success Graph Start -->
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
@@ -913,134 +914,183 @@
             <p>Year after year, more children reach their therapy goals with us.</p>
         </div>
 
-        <div class="row g-4 justify-content-center">
-
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="hs-card">
-                    <span class="hs-year">2023</span>
-                    <div class="hs-percent text-primary"><span class="hs-count" data-target="90">0</span>%</div>
-                    <div class="hs-bar"><div class="hs-fill bg-primary" data-width="90"></div></div>
-                    <p class="hs-label">Success Rate</p>
-                </div>
+        <div class="hg-card wow fadeInUp" data-wow-delay="0.3s" id="hgCard">
+            <div class="hg-plot">
+                <div class="hg-line" style="bottom: 100%;"><span>100%</span></div>
+                <div class="hg-line" style="bottom: 75%;"><span>75%</span></div>
+                <div class="hg-line" style="bottom: 50%;"><span>50%</span></div>
+                <div class="hg-line" style="bottom: 25%;"><span>25%</span></div>
+                <div class="hg-line" style="bottom: 0%;"><span>0%</span></div>
+                <div class="hg-bars" id="hgBars"></div>
             </div>
-
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="hs-card">
-                    <span class="hs-year">2024</span>
-                    <div class="hs-percent text-primary"><span class="hs-count" data-target="95">0</span>%</div>
-                    <div class="hs-bar"><div class="hs-fill bg-primary" data-width="95"></div></div>
-                    <p class="hs-label">Success Rate</p>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="hs-card hs-card-latest">
-                    <span class="hs-year bg-primary text-white">2025</span>
-                    <div class="hs-percent text-primary"><span class="hs-count" data-target="96">0</span>%</div>
-                    <div class="hs-bar"><div class="hs-fill bg-primary" data-width="96"></div></div>
-                    <p class="hs-label">Success Rate</p>
-                </div>
-            </div>
-
+            <div class="hg-years" id="hgYears"></div>
         </div>
     </div>
 </div>
 
 <style>
-    .hs-card {
+    .hg-card {
         background: #ffffff;
         border-radius: 15px;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        padding: 40px 30px;
-        text-align: center;
+        padding: 50px 30px 30px 30px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .hg-plot {
+        position: relative;
+        height: 300px;
+        margin-left: 45px;
+    }
+    .hg-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-top: 1px dashed #e5e5e5;
+    }
+    .hg-line span {
+        position: absolute;
+        left: -45px;
+        top: -9px;
+        width: 38px;
+        text-align: right;
+        font-size: 12px;
+        color: #aaa;
+    }
+    .hg-bars {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+    }
+    .hg-col {
         height: 100%;
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
+        width: 14%;
+        max-width: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
     }
-    .hs-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-    }
-    .hs-card-latest {
-        border-color: rgba(0, 0, 0, 0.06);
-    }
-    .hs-year {
-        display: inline-block;
-        background: #f0f0f0;
-        color: #555;
-        font-weight: 600;
-        font-size: 15px;
-        padding: 6px 20px;
-        border-radius: 30px;
-        margin-bottom: 20px;
-    }
-    .hs-percent {
-        font-size: 4rem;
+    .hg-val {
         font-weight: 700;
-        line-height: 1;
-        margin-bottom: 25px;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 8px;
     }
-    .hs-bar {
-        height: 10px;
-        background: #eeeeee;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-bottom: 15px;
+    .hg-fill {
+        width: 100%;
+        height: 0;
+        border-radius: 10px 10px 0 0;
+        opacity: 0.55;
+        transition: height 1.4s ease;
     }
-    .hs-fill {
-        height: 100%;
-        width: 0;
-        border-radius: 10px;
-        transition: width 1.6s ease;
+    .hg-latest .hg-fill {
+        opacity: 1;
     }
-    .hs-label {
-        margin: 0;
-        color: #888;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+    .hg-latest .hg-val {
+        font-size: 22px;
+    }
+    .hg-years {
+        display: flex;
+        justify-content: space-around;
+        margin-left: 45px;
+        border-top: 2px solid #333;
+        padding-top: 12px;
+    }
+    .hg-years div {
+        width: 14%;
+        max-width: 70px;
+        text-align: center;
+        font-weight: 600;
+        color: #555;
+    }
+    @media (max-width: 576px) {
+        .hg-card { padding: 40px 15px 20px 15px; }
+        .hg-plot { height: 240px; }
+        .hg-val { font-size: 14px; }
+        .hg-latest .hg-val { font-size: 16px; }
+        .hg-years div { font-size: 13px; }
     }
 </style>
 
 <script>
     (function () {
-        var cards = document.querySelectorAll('.hs-card');
-        if (!cards.length) return;
+        /* EDIT YOUR NUMBERS HERE.
+           Replace null with the real success rate when you have it.
+           Years set to null are hidden on the page. */
+        var hgData = [
+            { year: 2021, value: null },
+            { year: 2022, value: null },
+            { year: 2023, value: 90 },
+            { year: 2024, value: 95 },
+            { year: 2025, value: 96 },
+            { year: 2026, value: null }
+        ];
 
-        function animate(card) {
-            var counter = card.querySelector('.hs-count');
-            var fill = card.querySelector('.hs-fill');
-            var target = parseInt(counter.getAttribute('data-target'), 10);
-            var start = null;
-            var duration = 1600;
+        var bars = document.getElementById('hgBars');
+        var years = document.getElementById('hgYears');
+        var card = document.getElementById('hgCard');
+        if (!bars || !years || !card) return;
 
-            fill.style.width = fill.getAttribute('data-width') + '%';
+        var shown = hgData.filter(function (d) { return d.value !== null; });
 
-            function step(time) {
-                if (!start) start = time;
-                var progress = Math.min((time - start) / duration, 1);
-                counter.textContent = Math.round(progress * target);
-                if (progress < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
+        shown.forEach(function (d, i) {
+            var col = document.createElement('div');
+            col.className = 'hg-col' + (i === shown.length - 1 ? ' hg-latest' : '');
+            col.innerHTML =
+                '<div class="hg-val"><span class="hg-count" data-target="' + d.value + '">0</span>%</div>' +
+                '<div class="hg-fill bg-primary" data-h="' + d.value + '"></div>';
+            bars.appendChild(col);
+
+            var label = document.createElement('div');
+            label.textContent = d.year;
+            years.appendChild(label);
+        });
+
+        function animate() {
+            var fills = card.querySelectorAll('.hg-fill');
+            var counts = card.querySelectorAll('.hg-count');
+
+            fills.forEach(function (fill, i) {
+                fill.style.transitionDelay = (i * 0.15) + 's';
+                fill.style.height = fill.getAttribute('data-h') + '%';
+            });
+
+            counts.forEach(function (counter, i) {
+                var target = parseInt(counter.getAttribute('data-target'), 10);
+                var duration = 1400;
+                var delay = i * 150;
+                var start = null;
+
+                function step(time) {
+                    if (!start) start = time;
+                    var progress = Math.min((time - start) / duration, 1);
+                    counter.textContent = Math.round(progress * target);
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                setTimeout(function () { requestAnimationFrame(step); }, delay);
+            });
         }
 
         if ('IntersectionObserver' in window) {
             var observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        animate(entry.target);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.4 });
-            cards.forEach(function (card) { observer.observe(card); });
+                if (entries[0].isIntersecting) {
+                    animate();
+                    observer.disconnect();
+                }
+            }, { threshold: 0.3 });
+            observer.observe(card);
         } else {
-            cards.forEach(animate);
+            animate();
         }
     })();
 </script>
-<!-- Success Stats End -->
+<!-- Success Graph End -->
         <div class="container-xxl py-5 testimonial-section">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
